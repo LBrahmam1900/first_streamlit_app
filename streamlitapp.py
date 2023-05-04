@@ -27,8 +27,6 @@ def get_fruitvice_data(this_fruit_choice):
   fruitvice_normalized = pandas.json_normalize(fruitvice_response.json())
   return fruitvice_normalized
 
-
-
 try:
   fruit_choice = streamlit.text_input('What fruit would you like information about?')
   if not fruit_choice:
@@ -39,11 +37,7 @@ try:
 except URLError as e:
   streamlit.error()
   
-  
-
-streamlit.stop()
-
-
+## streamlit.stop()
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
